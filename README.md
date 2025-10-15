@@ -78,7 +78,7 @@ git clone https://github.com/lostdata2/AnatomyAR-Explorer
 ## 🗺 Development Goals
 - [x] Vertical and horizontal surface recognition
 - [x] Ability to place objects on recognized surfaces
-- [ ] Selecting surface mode (horizontal or vertical)
+- [x] Selecting surface mode (horizontal or vertical)
 - [ ] Learning grade configuration (with saving via PlayerPrefs)
 - [ ] Ability to choose organs for placing
 - [ ] Ability to place after clicking button
@@ -90,7 +90,11 @@ Currently (until July 1, 2026), due to project participation, we **categorically
 
 ## 📄 License
 
-Distributed under the `GPL-3.0 License`. See `LICENSE` for more information. However, with written permission from the copyright holder, you may be granted permission to use under the MIT license.
+Distributed under the `GPL3.0` license with the following additional restrictions:
+- **PROHIBITED** any publication in app stores without written permission from the copyright holder.
+- **PROHIBITED** any code modification for monetization purposes.
+
+See the `LICENSE` and `ADDITIONAL_TERMS`file for details. With written consent from the copyright holder, you may be granted permission to use the code for commercial purposes under the MIT license.
 
 ---
 
