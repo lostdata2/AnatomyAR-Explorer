@@ -76,9 +76,13 @@ git clone https://github.com/lostdata2/AnatomyAR-Explorer
 5. Build the project (File >> Build Settings >> Build)
 
 ## 🗺 Development Goals
-- [ ] Vertical and horizontal surface recognition
-- [ ] Ability to place objects on recognized surfaces
+- [x] Vertical and horizontal surface recognition
+- [x] Ability to place objects on recognized surfaces
+- [ ] Selecting surface mode (horizontal or vertical)
 - [ ] Learning grade configuration (with saving via PlayerPrefs)
+- [ ] Ability to choose organs for placing
+- [ ] Ability to place after clicking button
+- [ ] Ability to scale and rotate argans by swiping
 
 ## 🤝 Contributing
 
