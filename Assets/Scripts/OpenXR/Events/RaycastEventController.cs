@@ -8,42 +8,30 @@ using UnityEngine.XR.ARSubsystems;
 
 namespace UnityEngine.XR.ARFoundation.Samples
 {
-    /// <summary>
-    /// Takes an <see cref="InputActionReferences"/> asset and performs a raycast on each screen tap or trigger press
-    /// input. Raises an <see cref="ARRaycastHitEventAsset"/> if anything was hit.
-    /// </summary>
     public class RaycastEventController : MonoBehaviour
     {
         static List<ARRaycastHit> s_Hits = new();
         static Ray s_RaycastRay;
 
         [SerializeField]
-        [Tooltip("The active XR Origin in the scene.")]
         XROrigin m_XROrigin;
 
         [SerializeField]
-        [Tooltip("The active AR Raycast Manager in the scene.")]
         ARRaycastManager m_RaycastManager;
 
         [SerializeField]
-        [Tooltip("The Input Action References to use. You can create this by right clicking in the Project Window " +
-             "and going to <b>XR</b> > AR Foundation > Input Action References.")]
         InputActionReferences m_InputActionReferences;
 
         [SerializeField]
-        [Tooltip("Event to raise if anything was hit by the raycast.")]
         ARRaycastHitEventAsset m_ARRaycastHitEvent;
 
         [SerializeField]
-        [Tooltip("The type of trackable the raycast will hit.")]
         TrackableType m_TrackableType = TrackableType.PlaneWithinPolygon;
 
         [SerializeField]
-        [Tooltip("Optional event system to check for UI hits before emitting raycast events.")]
         EventSystem m_EventSystem;
 
         [SerializeField]
-        [Tooltip("Optional graphic raycaster to check for UI hits before emitting raycast events.")]
         GraphicRaycaster m_GraphicRaycaster;
 
         public InputActionReferences inputActions => m_InputActionReferences;
@@ -71,9 +59,6 @@ namespace UnityEngine.XR.ARFoundation.Samples
             var uiLayer = LayerMask.NameToLayer("UI");
             m_UILayerMask = 1 << uiLayer;
 
-            // if a GraphicRaycaster has been assigned, but not an EventSystem, try to
-            // find one.  If one cannot be found, then we clear out the GraphicRaycaster
-            // since an EventSystem is required to do the UI raycast.
             if (m_GraphicRaycaster != null && m_EventSystem == null)
             {
                 m_EventSystem = FindAnyObjectByType<EventSystem>();

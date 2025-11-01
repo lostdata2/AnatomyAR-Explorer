@@ -83,7 +83,7 @@ git clone https://github.com/lostdata2/AnatomyAR-Explorer
 - [ ] Ability to choose organs for placing
 - [ ] Ability to place after clicking button
 - [ ] Different objects are available depending on the grade
-- [ ] Ability to scale and rotate argans by swiping
+- [x] Ability to scale and rotate argans by swiping
 
 ## 🤝 Contributing
 

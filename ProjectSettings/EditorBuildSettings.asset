@@ -12,8 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene/HorizontalSurfaces/HorizontalScene.unity
     guid: ceba7336f3452bd22bf42b95573b331b
   - enabled: 1
-    path: Assets/Scenes/MainScene/VetricalSurfaces/VerticalScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MainScene/VerticalSurfaces/VerticalScene.unity
+    guid: 840ce4fe2ae4d301b9aa5025240e7b7f
+  - enabled: 0
+    path: Assets/Scenes/SwipesTest/SwipesTest.unity
+    guid: 7e90302767925ef1b99d3872f8638291
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: c52d3bb36b4c86f47af54ab9c7a02589,
       type: 2}
@@ -21,7 +24,9 @@ EditorBuildSettings:
       type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 98c79e8cc22674a89a95a3a90e2b70cb,
       type: 2}
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3d56fa548ade247c2890341fb8a12ac0,
+    com.unity.input.settings: {fileID: 11400000, guid: 7471e12c70e188ed5b13af0e8a1b3fc5,
+      type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 728f0fb5a23a19b17874f4d5ac336b15,
       type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 302e9f36808117f4184b07b05ca5bb47,
       type: 2}

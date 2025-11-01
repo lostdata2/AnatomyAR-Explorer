@@ -1,38 +1,68 @@
+using System;
 using UnityEngine;
 
 public class Scaling : MonoBehaviour
 {
-    public float minScale = 0.5f;
-    public float maxScale = 3.0f;
-    public float sensitivity = 0.01f; 
+    private TouchManagerAPI _touchManager;
+    
+    [SerializeField] private float MinScale = 0.5f;
+    [SerializeField] private float MaxScale = 3f;
 
-    private float initialDistance;
-    private Vector3 initialScale;
+    private float InitialDistance;
+    private Vector3 InitialScale;
+    private bool PrevStatus = false;
+    private float initialScaleX; // Добавлено: храним начальный масштаб
+
+    private void Awake()
+    {
+        _touchManager = new TouchManagerAPI();
+    }
+
+    private void OnEnable()
+    {
+        _touchManager.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _touchManager.Disable();
+    }
+    
+    void Start()
+    {
+        initialScaleX = this.gameObject.transform.localScale.x;
+    }
 
     void Update()
     {
-        if (Input.touchCount == 2)
+        if (_touchManager.Touch1.TouchState.ReadValue<float>() == 1 &&
+            _touchManager.Touch2.TouchState.ReadValue<float>() == 1)
         {
-            Touch touch0 = Input.GetTouch(0);
-            Touch touch1 = Input.GetTouch(1);
-
-            if (touch0.phase == TouchPhase.Began || touch1.phase == TouchPhase.Began)
+            Vector2 Touch1 = _touchManager.Touch1.TouchPosition.ReadValue<Vector2>();
+            Vector2 Touch2 = _touchManager.Touch2.TouchPosition.ReadValue<Vector2>();
+            
+            if (!PrevStatus)
             {
-                initialDistance = Vector2.Distance(touch0.position, touch1.position);
-                initialScale = transform.localScale;
+                InitialDistance = Vector2.Distance(Touch1, Touch2);
+                InitialScale = transform.localScale;
+                PrevStatus = true;
             }
-            else if (touch0.phase == TouchPhase.Moved || touch1.phase == TouchPhase.Moved)
+            else
             {
-                float currentDistance = Vector2.Distance(touch0.position, touch1.position);
-                float factor = currentDistance / initialDistance;
+                float currentDistance = Vector2.Distance(Touch1, Touch2);
+                float factor = currentDistance / InitialDistance;
 
-                // Вычисляем новый масштаб и ограничиваем его
-                Vector3 newScale = initialScale * factor;
-                newScale = Vector3.Max(Vector3.one * minScale, newScale);
-                newScale = Vector3.Min(Vector3.one * maxScale, newScale);
+                Vector3 newScale = InitialScale * factor;
+                newScale.x = Mathf.Clamp(newScale.x, initialScaleX * MinScale, initialScaleX * MaxScale);
+                newScale.y = Mathf.Clamp(newScale.y, initialScaleX * MinScale, initialScaleX * MaxScale);
+                newScale.z = Mathf.Clamp(newScale.z, initialScaleX * MinScale, initialScaleX * MaxScale);
 
                 transform.localScale = newScale;
             }
+        }
+        else
+        {
+            PrevStatus = false;
         }
     }
 }
