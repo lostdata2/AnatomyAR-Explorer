@@ -24,7 +24,19 @@ namespace UnityEngine.XR.ARFoundation.Samples
         public GameObject prefabToPlace
         {
             get => m_PrefabToPlace;
-            set => m_PrefabToPlace = value;
+            set
+            {
+                if (m_PrefabToPlace != value)
+                {
+                    m_PrefabToPlace = value;
+                    // Уничтожаем старый объект
+                    if (m_SpawnedObject != null)
+                    {
+                        Destroy(m_SpawnedObject);
+                        m_SpawnedObject = null;
+                    }
+                }
+            }
         }
 
         /// <summary>

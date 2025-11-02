@@ -80,8 +80,8 @@ git clone https://github.com/lostdata2/AnatomyAR-Explorer
 - [x] Ability to place objects on recognized surfaces
 - [x] Selecting surface mode (horizontal or vertical)
 - [x] Learning grade configuration (with saving via PlayerPrefs)
-- [ ] Ability to choose organs for placing
-- [ ] Ability to place after clicking button
+- [x] Ability to choose organs for placing
+- [x] Ability to place after clicking button
 - [ ] Different objects are available depending on the grade
 - [x] Ability to scale and rotate argans by swiping
 
