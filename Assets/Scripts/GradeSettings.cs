@@ -7,6 +7,7 @@ public class GradeSettings : MonoBehaviour
 
     [SerializeField] private GameObject ExitButton;
     [SerializeField] private GameObject Settings;
+    [SerializeField] private Animator BackgroundBrightness;
     [SerializeField] private TMP_Text GradeText;
     void Start()
     {
@@ -14,6 +15,7 @@ public class GradeSettings : MonoBehaviour
         if (!IsGradeSet)
         {
             Settings.SetActive(true);
+            BackgroundBrightness.Play("Dark");
             ExitButton.SetActive(false); //disabling ability to close menu
             UpdateText(-1, true);
         }

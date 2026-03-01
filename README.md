@@ -82,8 +82,9 @@ git clone https://github.com/lostdata2/AnatomyAR-Explorer
 - [x] Learning grade configuration (with saving via PlayerPrefs)
 - [x] Ability to choose organs for placing
 - [x] Ability to place after clicking button
-- [ ] Different objects are available depending on the grade
 - [x] Ability to scale and rotate argans by swiping
+- [x] Update ui
+- [x] Add quizes with assessment system
 
 ## 🤝 Contributing
 

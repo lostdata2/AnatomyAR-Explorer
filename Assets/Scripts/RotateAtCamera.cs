@@ -1,12 +1,10 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-using TouchPhase = UnityEngine.TouchPhase;
 
 public class RotateAtCamera : MonoBehaviour
 {
     private TouchManagerAPI _touchManager;
     
-    [SerializeField] private Transform Cube = null;
+    [SerializeField] private Transform Object = null;
     private Transform Camera = null;
     private Quaternion RotationShellPrev;
     private Quaternion RotationShellDiff;
@@ -15,7 +13,7 @@ public class RotateAtCamera : MonoBehaviour
     private bool IsTouching = false;
     private Vector2 TouchDelta;
 
-    [SerializeField] private float RotationSpeed;
+    [SerializeField] private float RotationSpeed = 0.5f;
     
     private void Awake()
     {
@@ -61,15 +59,17 @@ public class RotateAtCamera : MonoBehaviour
             _touchManager.Touch2.TouchState.ReadValue<float>() == 0) IsTouching = true;
         else IsTouching = false;
         
-        //for rotating with camera axes, by rotating shell, what has same axes as camera, because looking at camera
-        RotationCubePrev = Cube.rotation;
+        //for rotating with camera axes, by rotating shell, what has same (but inverted) axes as camera, because looking at camera
+        //object compensates for the rotation of the shell, but not the rotation from gestures.
+        //Thus, taking the rotation only from gestures, but along the axes of the camera
+        RotationCubePrev = Object.rotation;
         RotationShellPrev = this.transform.rotation;
         this.transform.LookAt(Camera);
         RotationShellDiff = this.transform.rotation * Quaternion.Inverse(RotationShellPrev);
-        Cube.rotation = Quaternion.Inverse(RotationShellDiff) * RotationCubePrev;
+        Object.rotation = Quaternion.Inverse(RotationShellDiff) * RotationCubePrev;
         ProceedRotation();
-        RotationCubePrev = Cube.rotation;
+        RotationCubePrev = Object.rotation;
         this.transform.LookAt(Camera);
-        Cube.rotation = RotationCubePrev;
+        Object.rotation = RotationCubePrev;
     }
 }
