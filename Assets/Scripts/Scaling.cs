@@ -11,7 +11,7 @@ public class Scaling : MonoBehaviour
     private float InitialDistance;
     private Vector3 InitialScale;
     private bool PrevStatus = false;
-    private float initialScaleX; // Добавлено: храним начальный масштаб
+    private float initialScaleX;
 
     private void Awake()
     {
