@@ -12,7 +12,7 @@ You can read [Russian version of readme.md](https://github.com/lostdata2/Anatomy
 
 ## About The Project
 
-![App Screenshot](LINK)
+<img width="100" height="170" alt="Image" src="https://github.com/user-attachments/assets/c75984ed-691b-46f2-9b60-674755cdbd88" />
 
 **Human Anatomy in Augmented Reality** is an innovative educational application developed for Android that transforms the study of human anatomy into an engaging interactive journey using augmented reality technology.
 
