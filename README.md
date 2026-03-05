@@ -4,7 +4,7 @@
 
 You can read [Russian version of readme.md](https://github.com/lostdata2/AnatomyAR-Explorer/blob/main/README-RU.md)
 
-![AnatomyAR Logo](LOGO)
+<img width="256" height="256" alt="Image" src="https://github.com/user-attachments/assets/bb9a79cf-bffd-458a-a2af-505384224def" />
 
 **Interactive Human Anatomy Learning in Augmented Reality**
 

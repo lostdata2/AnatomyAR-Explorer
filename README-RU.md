@@ -3,7 +3,7 @@
 # AnatomyAR Explorer
 You can read [English version of readme.md](https://github.com/lostdata2/AnatomyAR-Explorer)
 
-![AnatomyAR Logo (будет добавлено позже)](LOGO)
+<img width="256" height="256" alt="Image" src="https://github.com/user-attachments/assets/bb9a79cf-bffd-458a-a2af-505384224def" />
 
 **Интерактивное изучение анатомии человека в дополненной реальности**
 
