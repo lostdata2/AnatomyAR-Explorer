@@ -70,10 +70,14 @@ git clone https://github.com/lostdata2/AnatomyAR-Explorer
 ```
 
 3. Open the project in Unity (use "add from disk" in Unity Hub)
-    
-4. Make necessary changes to the project
 
-5. Build the project (File >> Build Settings >> Build)
+4. **Set game resolution to 1200x2000**
+
+5. Open `Menu V2` scene
+    
+6. Make necessary changes to the project
+
+7. Build the project (File >> Build Settings >> Build)
 
 ## 🗺 Development Goals
 - [x] Vertical and horizontal surface recognition
